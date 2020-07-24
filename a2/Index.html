@@ -9,111 +9,8 @@
   type = "image/x-icon"> 
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    
-    body, html {
-      height: 100%;
-      margin: 0;
-      font: 400 15px/1.8 "Lato", sans-serif;
-      color: #777;
-    }
-    nav {
-      text-align: center;
-      position: sticky;
-      top:0px;
-      overflow: hidden;
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-    }
-    nav a {
-      padding: 10px;
-      border: 1px black solid;
-      display: inline-block;
-      background-color:black;
-      color: white !important;
-      z-index: 999;
-    }
-    nav a.current {
-      background-color:#FFF;
-      transition: 0.3s;
-    }
-    
-    
-    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
-      position: relative;
-      opacity: 0.65;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-    }
-    .bgimg-1 {
-      background-image: url("EDIT3.jpg");
-      min-height: 100%;
-    }
-    
-    .bgimg-2 {
-      background-image: url("ANZACLOGO.jpg");
-      min-height: 400px;
-    }
-    
-    .bgimg-3 {
-      background-image: url("postcard.jpg");
-      min-height: 400px;
-    }
-    
-    .bgimg-4 {
-      background-image: url("map1.jpg");
-      min-height: 400px;
-    }
-    
-    .bgimg-5 {
-      background-image: url("maps.jpg");
-      min-height: 400px;
-    }
-    .caption {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: #000;
-    }
-    
-    .caption span.border {
-      background-color: #111;
-      color: #fff;
-      padding: 18px;
-      font-size: 25px;
-      letter-spacing: 10px;
-    }
-    
-    h3 {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font: 20px "Lato", sans-serif;
-      color: #111;
-    }
-    
-    .headers
-    {
-      background-color:transparent !important; 
-      font-size:42px!important; 
-      color: #282E34!important;
-    }
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1024px) {
-      .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
-        background-attachment: scroll;
-      }
-    }
-    a:-webkit-any-link {
-    color:#8cabe6;
-    }
-  </style>
-</head>
+<link rel="stylesheet" href="style.css">
+  </head>
 <body>
   <a name="top"></a>
   <nav>
@@ -134,8 +31,8 @@
       <span class="border">Douglas Raymond Baker ANZAC</span>
     </div>
   </div>
-  
-  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    
+  <div class ="section-white">
     <article id=Intro>
       <h3 style="text-align:center;">Home / Welcome</h3>
       <p> Hello and welcome,
@@ -159,7 +56,7 @@
     </div>
     
     <div style="position:relative;">
-      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      <div class ="section-black">
         <center>
         <p>These are copies of letters written by my father Douglas Raymond Baker during the First World War (1914-1918) to his family in Gympie. I have three thick exercise books in which the letters were copied in hand writing by my Aunt Alice, his sister. I understand that this was done so his letters could be sent on to other members of the family. I don’t know if the originals are still in existence, probably not.
           
@@ -262,7 +159,7 @@
                 </tr>
                 <tr>
                   <td>Bonsor</td>
-                  <td>= wonderful, marvellous.     (in 2009speak,  “awesome”, “cool”.)</td>
+                  <td>= wonderful, marvellous.     (in 2009 speak,  “awesome”, “cool”.)</td>
                   
                 </tr>
                 <tr>
@@ -326,7 +223,7 @@
           </div>
           
           <div style="position:relative;">
-            <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <div class ="section-black">
               Below is an example of the texts used for the letters and postcards as correspondence. Sample used "On the first page of the exercise book Aunt Alice has written:-
               
               
@@ -362,8 +259,8 @@
               </div>
               
               <div style="position:relative;">
-                <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-                  
+                <div class ="section-black">
+                    
                   <p>    Below is an example of the texts used for the letters and postcards as correspondence. Sample used "On the first page of the exercise book Aunt Alice has written:-
                     <br>
                     <br>
@@ -391,8 +288,8 @@
                       <span class="border headers">Places</span>
                     </div>
                   </div>
-                  
-                  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+                    
+                  <div class ="section-white">
                     <h3 style="text-align:center;">Google Maps Tour</h3>
                     <p> <center> Please click on the link below to view a tour I have compiled higlighting the journey that Douglas has travelled on!
                       <br>
@@ -408,7 +305,7 @@
                         </div>
                       </div>
                       <div style="position:relative;">
-                        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+                        <div class ="section-black">
                           <font size ="5"> <center>
                             External Links relating to the ANZAC story </font> </font>
                             <p>
@@ -426,7 +323,7 @@
                               </center>
                             </p></p>
                             <article id=Comments>
-                              <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+                              <div class ="section-white">
                                 <h3 style="text-align:center;">Comments</h3>
                                 <center> Please send through any suggestions that you have, and they will be forwarded to Ian Baker, Grandson of Douglas. </center>
                                 <center>    
@@ -434,9 +331,7 @@
                                     <center>
                                       <p style="color:blue">Name:<br>
                                         
-                                        <input type="text" name="name"><br>
-                                        
-                                        
+                                        <input type="text" name="name"><br>            
                                         <br>
                                         <label for="email">Email:</label><br>
                                         <input type="email" id="email" name="email">
