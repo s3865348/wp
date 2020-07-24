@@ -37,27 +37,27 @@ nav a.current {
   
 }
 .bgimg-1 {
-  background-image: url("EDIT3.jpg");
+  background-image: url("imgs/douglas_raymond_baker.jpg");
   min-height: 100%;
 }
 
 .bgimg-2 {
-  background-image: url("ANZACLOGO.jpg");
+  background-image: url("imgs/anzac_logo.jpg");
   min-height: 400px;
 }
 
 .bgimg-3 {
-  background-image: url("postcard.jpg");
+  background-image: url("imgs/postcard.jpg");
   min-height: 400px;
 }
 
 .bgimg-4 {
-  background-image: url("map1.jpg");
+  background-image: url("imgs/map.jpg");
   min-height: 400px;
 }
 
 .bgimg-5 {
-  background-image: url("maps.jpg");
+  background-image: url("imgs/world_map.jpg");
   min-height: 400px;
 }
 .caption {
