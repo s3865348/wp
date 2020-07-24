@@ -4,15 +4,16 @@ body, html {
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
 }
+
 nav {
   text-align: center;
   position: sticky;
   top:0px;
   overflow: hidden;
-  position: fixed;
   width: 100%;
   z-index: 1;
 }
+
 nav a {
   padding: 10px;
   border: 1px black solid;
@@ -21,11 +22,11 @@ nav a {
   color: white !important;
   z-index: 999;
 }
+
 nav a.current {
   background-color:#FFF;
   transition: 0.3s;
 }
-
 
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
   position: relative;
@@ -34,11 +35,11 @@ nav a.current {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
+
 .bgimg-1 {
   background-image: url("imgs/douglas_raymond_baker.jpg");
-  min-height: 100%;
+  min-height: 400px;
 }
 
 .bgimg-2 {
@@ -60,6 +61,7 @@ nav a.current {
   background-image: url("imgs/world_map.jpg");
   min-height: 400px;
 }
+
 .caption {
   position: absolute;
   left: 0;
@@ -84,33 +86,41 @@ h3 {
   color: #111;
 }
 
-.headers
-{
+.headers {
   background-color:transparent !important; 
-  font-size:42px!important; 
+  font-size:42px!important;
+  font-family:sans-serif;
   color: #282E34!important;
 }
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
     background-attachment: scroll;
   }
 }
+
 a:-webkit-any-link {
   color:#8cabe6;
 }
-.section-black
-{
-      color:#ddd;
-background-color:#282E34;
-text-align:center;
-padding:50px 80px;
-text-align: justify;
+
+.section-black {
+  color:#ddd;
+  background-color:#282E34;
+  text-align:center;
+  padding:50px 80px;
+  text-align: justify;
 }
-.section-white
-{color: #777;
-    background-color:white;
-    text-align:center;
-    padding:50px 80px;
-    text-align: justify;"
+
+.section-white {
+  color: #777;
+  background-color:white;
+  text-align:center;
+  padding:50px 80px;
+  text-align: justify;
+}
+
+.handwriting {
+  font-family: serif;
+  font-style: italic;
 }
