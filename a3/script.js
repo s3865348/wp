@@ -1,4 +1,22 @@
- function validateFields() {
+
+function onload (){
+var rememberCheck = document.getElementById("rememberMe");
+    var phonenumInput =document.getElementById("mobile_num");
+var emailInput = document.getElementById("email");
+    var nameInput =document.getElementById("name");
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rememberCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.email;
+    nameInput.value = localStorage.name;
+    phonenumInput.value =localStorage.phone;
+} else {
+  rememberCheck.removeAttribute("checked");
+  emailInput.value = "";
+    nameInput.value ="";
+    phonenumInput.value="";
+}
+}
+function validateFields() {
     
     var str = document.getElementById("mobile_num").value;
     
@@ -10,25 +28,34 @@
     }else{
       //here you can post the data from script
     }
-    document.getElementById("demo").innerHTML = temp;
+    document.getElementById("checknum").innerHTML = temp;
 }
-const rmCheck = document.getElementById("rememberMe"),
-    emailInput = document.getElementById("email");
 
-if (localStorage.checkbox && localStorage.checkbox !== "") {
-  rmCheck.setAttribute("checked", "checked");
-  emailInput.value = localStorage.username;
-} else {
-  rmCheck.removeAttribute("checked");
-  emailInput.value = "";
+function forgetme(rememberCheck) {
+if (!rememberCheck.checked)
+{
+    localStorage.email = "";
+    localStorage.name ="";
+    localStorage.checkbox = "";
+    localStorage.phone ="";
+    } 
+    
 }
 
 function lsRememberMe() {
-  if (rmCheck.checked && emailInput.value !== "") {
-    localStorage.username = emailInput.value;
-    localStorage.checkbox = rmCheck.value;
+  var name= document.getElementById("name");
+    var emailInput= document.getElementById("email");
+    var rememberCheck =document.getElementById("rememberMe");
+    var phonenumInput =document.getElementById("mobile_num");
+    if (rememberCheck.checked && emailInput.value !== "") {
+    localStorage.email = emailInput.value;
+    localStorage.checkbox = rememberCheck.value;
+      localStorage.name = name.value;
+        localStorage.phone = phonenumInput.value;
   } else {
-    localStorage.username = "";
+    localStorage.email = "";
+      localStorage.name ="";
     localStorage.checkbox = "";
+      localStorage.phone ="";
   }
 }

@@ -12,8 +12,9 @@
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
   <script src='../wireframe.js'></script>
+    <script src='./script.js'></script>
 </head>
-<body>
+<body onload="onload()">
   <header name="top" style="text-align:center; ">
     <img src="imgs/poppy.jpg" alt="Poppy" height="120" />
     <h3>ANZAC Douglas Raymond Baker - Letters Home</h3>
@@ -318,23 +319,37 @@
       <div class ="section-white" style="text-align: center;">
         <h3 style="text-align:center;">Comments</h3>
         Please send through any suggestions that you have, and they will be forwarded to Ian Baker, Grandson of Douglas.
-        <form action="mailto:ibak6837@bigpond.net.au" method="post" enctype="text/plain">
+        <form action="mailto:ibak6837@bigpond.net.au" method="post" enctype="text/plain" onsubmit="lsRememberMe()">
           <p style="color:blue">Name:</p>
-          <br>
-          <input type="text" name="name">
+          <input type="text" name="name" class="input-block-level" placeholder="Please enter your name:" id="name">
           <br><br>
           <label for="email">Email:</label>
           <br>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email" name="email" class="input-block-level" placeholder="Email address" id='username'>
           <br><br>
+         
+   <label for="mobile_num">Your Mobile Phone No:</label><br>
+  <input type="tel" id="mobile_num" name="mobile_num" placeholder="+61412345678" onblur="validateFields()" required>
+  </p>
+         <p id="checknum"></p>
+<br>
           Comment:
           <br>
           <input type="textarea" name="comment">
           <br><br>
-          <input type="submit" value="Send">
+         
           <input type="reset" value="Reset">
-        </form>
-        <a href="#top">Back to top of page</a> 
+       
+       <button class="btn btn-large btn-primary" type="submit" value ="Send">Submit</button>
+                
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me" id="rememberMe" onchange="forgetme(this)" > Remember me
+                </label>
+                
+        <br><br>
+               <a href="#top">Back to top of page</a> 
+         </form>
+            </div>
       </div>
     </article>
   </main>
