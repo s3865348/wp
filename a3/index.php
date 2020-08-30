@@ -1,3 +1,4 @@
+<?php include 'tools.php';?>
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -319,9 +320,9 @@
       <div class ="section-white" style="text-align: center;">
         <h3 style="text-align:center;">Comments</h3>
         Please send through any suggestions that you have, and they will be forwarded to Ian Baker, Grandson of Douglas.
-        <form action="mailto:ibak6837@bigpond.net.au" method="post" enctype="text/plain" onsubmit="lsRememberMe()">
+        <form action="" method="post" onsubmit="lsRememberMe()">
           <p style="color:blue">Name:</p>
-          <input type="text" name="name" class="input-block-level" placeholder="Please enter your name:" id="name">
+          <input type="text" name="name" class="input-block-level" placeholder="Please enter your name:" id="name" pattern ="[A-Za-z]{1,32}">
           <br><br>
           <label for="email">Email:</label>
           <br>
@@ -330,7 +331,6 @@
          
    <label for="mobile_num">Your Mobile Phone No:</label><br>
   <input type="tel" id="mobile_num" name="mobile_num" placeholder="+61412345678" onblur="validateFields()" required>
-  </p>
          <p id="checknum"></p>
 <br>
           Comment:
