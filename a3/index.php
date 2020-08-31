@@ -1,4 +1,4 @@
-<?php include 'tools.php';?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -16,6 +16,7 @@
     <script src='./script.js'></script>
 </head>
 <body onload="onload()">
+    <?php include 'tools.php';?>
   <header name="top" style="text-align:center; ">
     <img src="imgs/poppy.jpg" alt="Poppy" height="120" />
     <h3>ANZAC Douglas Raymond Baker - Letters Home</h3>
@@ -208,29 +209,60 @@
 
       <div style="position:relative;">
         <div class ="section-black">
-          Below is an example of the texts used for the letters and postcards as correspondence. Sample used "On the first page of the exercise book Aunt Alice has written:-
-          
-          
-          
-          Book No. I
-          
-          written by Alice Baker.
-          
-          
-          
-          Letters received from D. R. Baker after
-          
-          his enlistment for the war  Sept.  1914.
-          
-          "
-          <p class="handwriting">
-            August 25th 1914.
             
-            Just have a chance to write a few lines at a small shop near the Camp. We had about four hours in Brisbane before going to Camp and had a good look round. Arrived in Camp about 6 p.m. and all the Gympie lads [Infantry] were placed in one tent [11 of us].  The Light Horse are nearly a mile from us. Of course it was my luck to be made Tent Orderly for the first day – getting the tucker and cleaning up. We have had nothing issued to us yet, so just as well I brought something.  There is no child’s play in this camp – plenty of hard work – they mean business. We have a free hand at night so far and can write as we like.  Saw Herb as we were marching to the Camp. He was going back from work and I had only time to shake hands with him – could not leave the ranks. We will be under Captain Jackson. He has been appointed Captain of the Northern Rivers men and managed to get us in with him. Cannot write any more, am in a hurry. Will write more later on. Am feeling quite homesick. Had our feet examined today, teeth tomorrow I think.
-          </p>
-          <br>
-          <p style="text-align: center;">
-            <a href="#top">Back to top of page</a>
+            <?php
+            $file= fopen("http://titan.csit.rmit.edu.au/~e54061/wp/letters-home.txt","r"); 
+            $isfirstline=true;
+            $letters = array();
+            //opens the file and reads it
+            while(! feof($file)) {
+                $line = fgetcsv($file, 0, "\t");
+                if ($isfirstline) {
+                    $header = $line;
+                }else{
+                    $letters[] = array_combine($header, $line);
+                }
+                $isfirstline=false;
+            }
+            //closing file
+            fclose($file);
+            ?>
+<?php for($index=0; $index < count($letters); $index++) {
+         ?>
+            <button onclick="revealdiv('letter<?php echo $index ?>')">  Open Letter <?php echo $index ?></button>
+    <?php } ?>
+    <?php for($index=0; $index < count($letters); $index++) {
+        $currLetter = $letters[$index];
+         ?>
+    <div id="letter<?php echo $index ?>" class ="letters maincontainer" style="display:none">
+    <div class= "thecard">
+
+<div class ="thefront">
+        <div><?php echo $currLetter["DateStart"]; ?></div>
+        <div><?php echo $currLetter["DateEnd"]; ?></div>
+        <div><?php echo $currLetter["Type"]; ?></div>
+        <div><?php echo $currLetter["Town"];?></div>
+        <div><?php echo $currLetter["Country"];?></div>
+        <div><?php echo $currLetter["Battle"];?></div> 
+        </div>
+
+<div class ="theback">
+    <div><?php echo nl2br($currLetter["Content"]);?></div>
+        </div>
+
+</div>    
+        
+    </div>
+    <?php } ?>
+            
+            
+
+    
+    </div>
+
+            <p style="text-align: center;">
+            
+                <a href="#top">Back to top of page</a>
           </p>
         </div>
       </div>
@@ -339,7 +371,8 @@
           <br><br>
          
           <input type="reset" value="Reset">
-       
+       <input type="hidden" name="contactsubmit" value="true">
+            
        <button class="btn btn-large btn-primary" type="submit" value ="Send">Submit</button>
                 
                 <label class="checkbox">

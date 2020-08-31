@@ -7,7 +7,7 @@ body, html {
 
 nav {
   text-align: center;
-  position: sticky;
+  position:sticky!important;
   top:0px;
   overflow: hidden;
   width: 100%;
@@ -123,4 +123,48 @@ a:-webkit-any-link {
 .handwriting {
   font-family: serif;
   font-style: italic;
+}
+textarea:required:invalid, input:required:invalid {
+
+            background-color: lightyellow;
+
+        }
+
+.maincontainer{
+position: relative;
+width : 100%;
+height: 250px;
+}
+
+.thecard{
+position: absolute;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+transition: all 0.5s ease;
+background: yellow;
+}
+
+.thecard:hover{
+    transform: rotateY(180deg);
+    }
+    
+.thefront{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background: #ffc728;
+color: #333;
+    }
+
+.theback{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background: #fafafa;
+color: #333;
+transform: rotateY(180deg);      
+overflow:auto;
 }

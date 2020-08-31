@@ -59,3 +59,13 @@ function lsRememberMe() {
       localStorage.phone ="";
   }
 }
+function revealdiv(elementId) {
+  var selectedletter = document.getElementById(elementId);
+  var letterelements = document.getElementsByClassName("letters");
+    var i;
+    for (i = 0; i < letterelements.length; i++) {
+    var letterelement =letterelements[i];
+    letterelement.style.display = "none";    
+    }
+    selectedletter.style.display = "block";
+}
